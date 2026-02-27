@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style1.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="project_container">
+        <h2 class="main_heading">Login</h2>
+
+        <p class="prompt_para">Username:</p>
+        <input type="text" class="text_input" id="username_input" placeholder="Enter username">
+
+        <p class="prompt_para">Password:</p>
+        <input type="password" class="text_input" id="password_input" placeholder="Enter password">
+
+        <button class="login_button" onclick="loginUser()">Login</button>
+
+        <div class="result-text" id="result"></div>
+
+        <p class="signup_link">
+            Don't have an account? 
+            <a href="signup.html">Sign up here</a>
+        </p>
+    </div>
+
+    <script>
+        function loginUser(){
+            const username = document.getElementById("username_input").value;
+            const password = document.getElementById("password_input").value;
+
+            if(!username || !password){
+                document.getElementById("result").innerText = "Please enter both username and password.";
+                return;
+            }
+
+            // Dummy validation
+            if(username === "admin" && password === "1234"){
+                document.getElementById("result").innerText = "Login successful!";
+            } else {
+                document.getElementById("result").innerText = "Invalid username or password.";
+            }
+        }
+    </script>
+</body>
+</html>
